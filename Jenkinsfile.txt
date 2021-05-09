@@ -1,0 +1,32 @@
+pipeline {
+   agent any
+    stages {
+         stage('Code fetch'){
+            steps {
+                git branch: 'main', changelog: false, credentialsId: 'Git', poll: false, url: 'https://github.com/KartikeyaSinha/hackerearth-devops.git'
+            }
+         }
+         stage('Dockerizing the Application'){
+            steps {
+             powershell 'docker build -t img .'
+            }
+        }
+        }
+    }
+       /* stage('Unit Test'){
+            steps {
+                
+            }
+        }
+        stage('Dockerizing the Application'){
+            steps {
+             
+            }
+        }
+        stage('Deploy to Apache Tomcat'){
+            steps {
+             
+            }
+        }
+    }
+}*/
