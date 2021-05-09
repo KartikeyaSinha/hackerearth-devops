@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-#RUN apt-get -y update
+RUN apt-get -y update
 RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
 #RUN apt-get -y install openjdk-8-jdk wget
